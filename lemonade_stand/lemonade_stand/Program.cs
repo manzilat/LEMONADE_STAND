@@ -10,6 +10,7 @@ namespace lemonade_stand
     {
         static void Main(string[] args)
         {
+            Player player;
         }
     }
 }
