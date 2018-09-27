@@ -14,7 +14,7 @@ namespace lemonade_stand
         static List<string> conditions;
         static int percentageDivisor = 100;
         static int maxTempratureAlerterationPercent = 5; // Int will be devided to calculate percentage.
-        static int minTempratureHigh = 55;
+        static int minTempratureHigh = -10;
         static int maxTempratureHigh = 98;
 
         public weather(Random random)
@@ -30,13 +30,14 @@ namespace lemonade_stand
         }
         private void CreateConditionsList()
         {
+            conditions.Add("snow");
             conditions.Add("rainy");
             conditions.Add("mostly sunny");
             conditions.Add("partly sunny");
             conditions.Add("partly cloudy");
             conditions.Add("mostly cloudy");
-            conditions.Add("partly cloudy with scattered rain showers");
-            conditions.Add("mostly cloudy with scattered rain showers");
+            conditions.Add("partly cloudy with  rain showers");
+            conditions.Add("mostly cloudy with rain showers");
             conditions.Add("thunder storms");
         }
         public string Condition
