@@ -10,12 +10,12 @@ namespace lemonade_stand
     {
         public static void DisplayForecast(List<weather> forecast)
         {
-            WriteLine($"{forecast.Count} Day Forecast");
+            WriteLine($"{Forecast.Count} Day Forecast");
             WriteLine("- - - - - - - - - - - - -\n");
-            for (int i = 0; i < forecast.Count; i++)
+            for (int i = 0; i < Forecast.Count; i++)
             {
                 string dayLabel = i == 0 ? "TODAY: " : $"{i} DAYS OUT: ";
-                WriteLine($"{dayLabel} A high of {forecast[i].HighTemp}°F and will be {forecast[i].Condition}.");
+                WriteLine($"{dayLabel} A high of {Forecast[i].HighTemp}°F and will be {Forecast[i].Condition}.");
             }
         }
         public static void DisplayPlayerDayResults(Player player, int dayNumber)

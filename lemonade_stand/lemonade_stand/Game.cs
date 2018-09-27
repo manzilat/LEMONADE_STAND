@@ -82,12 +82,12 @@ namespace lemonade_stand
 
             playerCount = int.Parse(Shopping.GetInput("How many human players will there be?", "integer greater than 0"));
 
-            for (int i = 0; i < playerCount; i++)
+           /* for (int i = 0; i < playerCount; i++)
             {
                 players.Add(new Human(store));
                 players[i].SetPlayerName($"Player {i + 1}");
             }
-        }
+        }*/
 
         private void SetupPlayers()
         {
