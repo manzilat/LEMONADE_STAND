@@ -9,19 +9,19 @@ namespace lemonade_stand
     class weather
     {
         Random random;
-        int tempratureHigh;
+        int highTemp;
         int condition;
         static List<string> conditions;
         static int percentageDivisor = 100;
-        static int maxTempratureAlerterationPercent = 5; // Int will be devided to calculate percentage.
-        static int minTempratureHigh = -10;
-        static int maxTempratureHigh = 98;
+        static int maxTempChangePercent = 5; 
+        static int minHighTemp = -10;
+        static int maxHighTemp = 98;
 
         public weather(Random random)
         {
             this.random = random;
             conditions = new List<string>();
-            TempratureHigh = random.Next(minTempratureHigh, maxTempratureHigh);
+            highTemp = random.Next(minHighTemp, maxHighTemp);
             if (conditions.Count == 0)
             {
                 CreateConditionsList();
@@ -68,22 +68,22 @@ namespace lemonade_stand
             private set { condition = value; }
         }
 
-        public static int MaxTempratureHigh
+        public static int MaxHighTemp
         {
-            get { return maxTempratureHigh; }
-            private set { maxTempratureHigh = value; }
+            get { return maxHighTemp; }
+            private set { maxHighTemp = value; }
         }
 
-        public static int MinTempratureHigh
+        public static int MinHighTemp
         {
-            get { return minTempratureHigh; }
-            private set { minTempratureHigh = value; }
+            get { return minHighTemp; }
+            private set { minHighTemp = value; }
         }
 
-        public int TempratureHigh
+        public int HighTemp
         {
-            get { return tempratureHigh; }
-            private set { tempratureHigh = value; }
+            get { return highTemp; }
+            private set { highTemp = value; }
         }
 
         
@@ -98,11 +98,11 @@ namespace lemonade_stand
             Condition = conditions[indexCondition];
         }
 
-        public void AlterForecast()
+        public void ChangeForecast()
         {
             int conditionChange;
 
-            TempratureHigh = TempratureHigh + (TempratureHigh * (random.Next(maxTempratureAlerterationPercent) / percentageDivisor));
+            HighTemp = HighTemp + (HighTemp * (random.Next(maxTempChangePercent) / percentageDivisor));
 
             conditionChange = random.Next(-1, 1);
             if (condition + conditionChange >= 0 && condition + conditionChange < conditions.Count)
@@ -112,3 +112,5 @@ namespace lemonade_stand
         }
     }
 }
+
+
