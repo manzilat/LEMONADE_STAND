@@ -25,7 +25,7 @@ namespace lemonade_stand
 
         public List<Product> Products
         {
-            get { return Products; }
+            get { return products; }
             private set { Products = value; }
         }
 

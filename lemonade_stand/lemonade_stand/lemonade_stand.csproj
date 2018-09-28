@@ -43,15 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="condition.cs" />
-    <Compile Include="Days.cs" />
-    <Compile Include="DisplayTotal.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="DailyReport.cs" />
+    <Compile Include="Day.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Items.cs" />
-    <Compile Include="Inventory.cs" />
+    <Compile Include="Human.cs" />
+    <Compile Include="Ingredient.cs" />
     <Compile Include="Player.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recipe.cs" />
+    <Compile Include="Shopping.cs" />
+    <Compile Include="Store.cs" />
     <Compile Include="weather.cs" />
   </ItemGroup>
   <ItemGroup>

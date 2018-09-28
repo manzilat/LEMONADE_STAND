@@ -12,17 +12,8 @@ namespace lemonade_stand
         static void Main(string[] args)
         {
             Game game = new Game();
-        }
-        public static void WelcomeMessage()
-        {
-            WriteLine("         LEMONADE STAND GAME");
-            WriteLine("=====================================\n");
 
-        }
-
-        public static void WriteLine(string message)
-        {
-            Console.WriteLine(message);
+            while (Shopping.GetInput("Would you like to play again? <yes/no>", "yes/no") == "yes") ;
         }
     }
 }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace lemonade_stand
 {
-    class DailyReport
+    public class DailyReport
     {
         int actualCustomerCount;
-        double EndingBalance;
-        double StartingBalance;
+        double endingBalance;
+        double initialBalance;
         int potentialCustomerCount;
         bool ranOutOfInventory = false;
 
@@ -20,17 +20,17 @@ namespace lemonade_stand
             set { actualCustomerCount = value; }
         }
 
-        public double endingBalance
+        public double EndingBalance
         {
-            get { return EndingBalance; }
-            set { EndingBalance = value; }
+            get { return endingBalance; }
+            set { endingBalance = value; }
         }
 
-        public double startingBalance
+        public double InitialBalance
         {
-            get { return StartingBalance; }
+            get { return initialBalance; }
             set
-            { StartingBalance = value; }
+            { initialBalance = value; }
         }
 
         public int PotentialCustomerCount

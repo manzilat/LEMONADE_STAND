@@ -8,30 +8,30 @@ namespace lemonade_stand
 {
     abstract public class Player
     {
-        static double beginningBalance = 25 ;
+        static double initialBalance = 25 ;
 
-        double Balance;
+        double balance;
         string name;
         Dictionary<string, int> inventory;
-        List<DailyReport> DailyReport;
+        List<DailyReport> dailyReports;
 
 
-        public double balance
+        public double Balance
         {
             get { return balance; }
             set { balance = value; }
         }
 
-        public static double BeginningBalance
+        public static double InitialBalance
         {
-            get { return beginningBalance; }
-            private set { beginningBalance = value; }
+            get { return initialBalance; }
+            private set { initialBalance = value; }
         }
 
         public List<DailyReport> DailyReports
         {
-            get { return DailyReports; }
-            set { DailyReports = value; }
+            get { return dailyReports; }
+            set { dailyReports = value; }
         }
 
         public Dictionary<string, int> Invetory
@@ -49,7 +49,7 @@ namespace lemonade_stand
 
         public Player(Store store)
         {
-            Balance = beginningBalance;
+            Balance = InitialBalance;
             name = "";
             inventory = new Dictionary<string, int>();
             DailyReports = new List<DailyReport>();
@@ -85,14 +85,14 @@ namespace lemonade_stand
 
         public void DisplayBalance()
         {
-            Shopping.DisplayPlayerBalance(this);
+            Shopping.DisplayBalance(this);
         }
 
         public void GoShopping(Store store)
         {
             if (Shopping.GetInput($"{name} would you like to visit the store for supplies? <yes/no>", "yes/no") == "yes")
             {
-                Shopping.GoShopping(this, store);
+                Shopping.Shopping(this, store);
             }
         }
 
@@ -123,7 +123,7 @@ namespace lemonade_stand
             return false;
         }
 
-        public double ProcessBankTransaction(double increaseBalanceBy)
+        public double ProcessTransaction(double increaseBalanceBy)
         {
             if (double.MaxValue - Balance <= increaseBalanceBy) { throw new OverflowException(); }
             if (double.MinValue + Balance >= increaseBalanceBy) { throw new OverflowException(); }

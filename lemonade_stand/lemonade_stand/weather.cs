@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lemonade_stand
 {
-    class weather
+   public class weather
     {
         Random random;
         int highTemp;

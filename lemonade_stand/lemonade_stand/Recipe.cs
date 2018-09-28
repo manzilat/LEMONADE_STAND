@@ -15,14 +15,14 @@ namespace lemonade_stand
         List<Ingredient> cup;
         List<Ingredient> pitcher;
         double sellPrice;
-
+        
         public Recipe(List<Product> products)
         {
             cup = new List<Ingredient>();
             pitcher = new List<Ingredient>();
             foreach (Product product in products)
             {
-                switch (product.RecipePart)
+                switch (Product.Recipe)
                 {
                     case "pitcher":
                         pitcher.Add(new Ingredient(product.Name, product.Unit));

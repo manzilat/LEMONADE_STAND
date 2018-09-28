@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace lemonade_stand
 {
-    class Product
+   public class Product
     {
         string name;
         string unit;
-        string recipepart;
+        string recipePart;
         double price;
        
         
-        public Product(string name, double price, string unit, string recipepart)
+        public Product(string name, double price, string unit, string recipePart)
         {
             this.name = name;
             this.unit = unit;
-            this.recipepart = recipepart;
+            this.recipePart = recipePart;
             this.price = price;
            
         }
@@ -36,8 +36,8 @@ namespace lemonade_stand
 
         public string Recipepart
         {
-            get { return recipepart; }
-            private set { recipepart = value; }
+            get { return recipePart; }
+            private set { recipePart = value; }
         }
 
         public string Unit
