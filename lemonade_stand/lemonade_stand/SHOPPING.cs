@@ -38,6 +38,10 @@ namespace lemonade_stand
                 WriteLine($"{dayLabel} A high of {Forecast[i].HighTemp}°F and will be {Forecast[i].Condition}.");
             }
         }
+       /* public static void DisplayBalance(Player player)
+        {
+            WriteLine($"{player.Name} your current bank account balance is ${player.BankBalance}\n");
+        }*/
         public static void DisplayPlayerDayResults(Player player, int dayNumber)
         {
             int missedCustomerCount = player.DailyReports[dayNumber].PotentialCustomerCount - player.DailyReports[dayNumber].ActualCustomerCount;
@@ -153,7 +157,7 @@ namespace lemonade_stand
             do
             {
                 DisplayPlayerInventory(player);
-                DisplayBalance(player);
+               /* DisplayPlayerBalance(player);*/
                 WriteLine("");
                 DisplayStoreProducts(store);
                 input = GetInput("What product would you like to purchase? Enter 'continue' if your shopping is complete.", "string").ToLower();
@@ -279,7 +283,7 @@ namespace lemonade_stand
             }
 
             player.AdjustInventory(product.Name, quanity);
-            player.ProcessBankTransaction(product.Price * quanity * -1);
+            player.ProcessTransaction(product.Price * quanity * -1);
 
         }
 

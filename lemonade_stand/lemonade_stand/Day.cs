@@ -10,7 +10,7 @@ namespace lemonade_stand
     {
         static int DaysToforecastWeather = 7;
 
-        List<Weather> forecast;
+        List<weather> forecast;
         Random random;
         List<Recipe> recipes;
         List<Player> players;
@@ -20,7 +20,7 @@ namespace lemonade_stand
         public Day(Random random, List<Player> players, int dayNumber)
         {
             this.random = random;
-            Forecast = new List<weather>();
+            forecast = new List<weather>();
             CreateForecast();
             recipes = new List<Recipe>();
             customers = new List<Customer>();
@@ -45,8 +45,8 @@ namespace lemonade_stand
 
         public List<weather> Forecast
         {
-            get { return Forecast; }
-            set { Forecast = value; }
+            get { return forecast; }
+            set { forecast = value; }
         }
 
         private int CalculateCustomerCount()
@@ -55,18 +55,18 @@ namespace lemonade_stand
             switch (Forecast[0].ConditionIndex)
             {
                 case 0:
-                    baseCustomerCount = 120;
+                    baseCustomerCount = 250;
                     break;
                 case 1:
                 case 2:
-                    baseCustomerCount = 90;
+                    baseCustomerCount = 175;
                     break;
                 case 3:
                 case 4:
-                    baseCustomerCount = 56;
+                    baseCustomerCount = 110;
                     break;
                 default:
-                    baseCustomerCount = 25;
+                    baseCustomerCount = 39;
                     break;
             }
             return Convert.ToInt16(Convert.ToDouble(baseCustomerCount) * (Convert.ToDouble(Forecast[0].HighTemp) / Convert.ToDouble(weather.MaxHighTemp)) / Convert.ToDouble((Forecast[0].ConditionIndex + 1)));
@@ -95,6 +95,16 @@ namespace lemonade_stand
                 }
             }
         }
+        private void Updateforecast()
+        {
+            for (int i = 0; i < Forecast.Count; i++)
+            {
+                Forecast[i].ChangeForecast();
+            }
+
+            CreateForecast();
+        }
+
 
         public void SetPlayerRecipes(List<Product> products)
         {
@@ -122,7 +132,7 @@ namespace lemonade_stand
                     }
                     else if (player.Invetory["cup"] > 0 && player.Invetory["ice cube"] >= recipes[playerIndex].IceCubeCount)
                     {
-                        if (player.MakePitcher(recipes[playerIndex]))
+                        if (player.Pitcher(recipes[playerIndex]))
                         {
                             cupsRemainingInPitcher = Recipe.CupsPerPitcher;
                             player.DailyReports[dayNumber].RecordPurchase(recipes[playerIndex].SellPrice);
@@ -153,29 +163,20 @@ namespace lemonade_stand
             {
                 Player player = players[i];
                 player.DailyReports.Insert(dayNumber, new DailyReport());
-                player.DailyReports[dayNumber].StartingBalance = player.balance;
-                player.DailyReports[dayNumber].EndingBalance = player.balance;
+                player.DailyReports[dayNumber].InitialBalance = player.Balance;
+                player.DailyReports[dayNumber].EndingBalance = player.Balance;
                 player.DailyReports[dayNumber].PotentialCustomerCount = customers.Count;
 
                 SimulateCustomers(player, i);
 
-                player.balance = player.DailyReports[dayNumber].EndingBalance;
+                player.Balance = player.DailyReports[dayNumber].EndingBalance;
 
                 Shopping.DisplayPlayerDayResults(player, dayNumber);
 
             }
         }
 
-        private void Updateforecast()
-        {
-            for (int i = 0; i < Forecast.Count; i++)
-            {
-                Forecast[i].AlterForecast();
-            }
-
-            CreateForecast();
-        }
-
+        
 
     }
 }

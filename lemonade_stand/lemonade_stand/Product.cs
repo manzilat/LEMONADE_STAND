@@ -10,7 +10,7 @@ namespace lemonade_stand
     {
         string name;
         string unit;
-        string recipePart;
+        public string recipePart;
         double price;
        
         

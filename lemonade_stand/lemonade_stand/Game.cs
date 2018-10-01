@@ -8,10 +8,6 @@ namespace lemonade_stand
 {
     class Game
     {
-       
-
-        public Game()
-        {
             List<Player> players;
             Dictionary<int, double> finalScores;
             List<Day> days;
@@ -21,9 +17,10 @@ namespace lemonade_stand
             
             public Game()
             {
+                days = new List<Day>();
                 random = new Random();
                 players = new List<Player>();
-                days = new List<Day>();
+                
                 numberOfDaysToPlay = 7;
                 store = new Store();
 
@@ -57,8 +54,8 @@ namespace lemonade_stand
 
             }
 
-            /* private*/
-            void GetFinalScores()
+       
+        private void GetFinalScores()
             {
                 finalScores = new Dictionary<int, double>();
                 for (int i = 0; i < players.Count; i++)
@@ -69,8 +66,8 @@ namespace lemonade_stand
             }
 
 
-            /* private*/
-            void SendPlayersToStore()
+
+        private void SendPlayersToStore()
             {
                 foreach (Player player in players)
                 {
@@ -78,8 +75,8 @@ namespace lemonade_stand
                 }
             }
 
-            /* private*/
-            void SetupHumanPlayers()
+           
+            private void SetupHumanPlayers()
             {
                 int playerCount;
 
@@ -92,13 +89,53 @@ namespace lemonade_stand
                 }
             }
 
-            /* private*/
-            void SetupPlayers()
+           
+            private void SetupPlayers()
             {
 
                 SetupHumanPlayers();
 
             }
         }
-    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

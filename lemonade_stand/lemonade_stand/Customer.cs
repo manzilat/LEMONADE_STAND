@@ -8,7 +8,7 @@ namespace lemonade_stand
 {
     class Customer
     {
-        int maxIceCubeCount = 8;
+        int maxIceCubeCount = 15;
         int minIceCubeCount = 0;
 
         Random random;

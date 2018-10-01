@@ -83,16 +83,16 @@ namespace lemonade_stand
             return inventory[item];
         }
 
-        public void DisplayBalance()
+     /*   public void DisplayBalance()
         {
-            Shopping.DisplayBalance(this);
-        }
+           Shopping.DisplayBalance(this);
+        } */
 
         public void GoShopping(Store store)
         {
             if (Shopping.GetInput($"{name} would you like to visit the store for supplies? <yes/no>", "yes/no") == "yes")
             {
-                Shopping.Shopping(this, store);
+                Shopping.GoShopping(this, store);
             }
         }
 
@@ -108,7 +108,7 @@ namespace lemonade_stand
             return true;
         }
 
-        public bool MakePitcher(Recipe recipe)
+        public bool Pitcher(Recipe recipe)
         {
             if (IsSufficentInventoryPitcher(recipe))
             {

@@ -8,7 +8,7 @@ namespace lemonade_stand
 {
     class Human : Player
     {
-        public Human(Store store):base(store)
+        public Human(Store store):base (store)
         {
 
         }

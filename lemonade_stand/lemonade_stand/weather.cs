@@ -14,7 +14,7 @@ namespace lemonade_stand
         static List<string> conditions;
         static int percentageDivisor = 100;
         static int maxTempChangePercent = 5; 
-        static int minHighTemp = -10;
+        static int minHighTemp = 55;
         static int maxHighTemp = 98;
 
         public weather(Random random)

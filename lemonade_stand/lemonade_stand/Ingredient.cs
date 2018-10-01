@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lemonade_stand
 {
-    class Ingredient
+    public class Ingredient
     {
         string name;
         string unit;

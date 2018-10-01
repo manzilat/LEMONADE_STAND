@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace lemonade_stand
 {
-    class Recipe
+   public class Recipe
     {
 
         static string[] tasteProfiles = new string[] { "sour", "balanced", "sweet" };
         static int cupsPerPitcher = 10;
 
-        List<Ingredient> cup;
+        private List<Ingredient> cup;
         List<Ingredient> pitcher;
         double sellPrice;
+        public Recipe()
+        {
+            
+        }
         
         public Recipe(List<Product> products)
         {
@@ -22,7 +26,7 @@ namespace lemonade_stand
             pitcher = new List<Ingredient>();
             foreach (Product product in products)
             {
-                switch (Product.Recipe)
+                switch (product.recipePart)
                 {
                     case "pitcher":
                         pitcher.Add(new Ingredient(product.Name, product.Unit));
@@ -39,13 +43,13 @@ namespace lemonade_stand
         public List<Ingredient> Cup
         {
             get { return cup; }
-            private set { cup = value; }
+            set { cup = value; }
         }
 
         public static int CupsPerPitcher
         {
             get { return cupsPerPitcher; }
-            private set { cupsPerPitcher = value; }
+            set { cupsPerPitcher = value; }
         }
 
         public int IceCubeCount
@@ -56,7 +60,7 @@ namespace lemonade_stand
         public List<Ingredient> Pitcher
         {
             get { return pitcher; }
-            private set { pitcher = value; }
+            set { pitcher = value; }
         }
 
         public double SellPrice
