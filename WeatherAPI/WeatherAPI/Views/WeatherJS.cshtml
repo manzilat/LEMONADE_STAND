@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "WeatherJS";
+}
+
+<h2>WeatherJS</h2>
+<p id="reply">
+
+</p>
+<button>Get Weather</button>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.get("http://api.openweathermap.org/data/2.5/weather?q=Milwaukee&APPID=eedd3e1f0693443483d92e92f060dd11&units=imperial", function (response) {
+                response
+                $("#reply").text(response.name);
+            });
+        });
+    });
+</script>

@@ -45,7 +45,7 @@ namespace lemonade_stand
         public static void DisplayPlayerDayResults(Player player, int dayNumber)
         {
             int missedCustomerCount = player.DailyReports[dayNumber].PotentialCustomerCount - player.DailyReports[dayNumber].ActualCustomerCount;
-            double totalSales = player.DailyReports[dayNumber].EndingBalance - player.DailyReports[dayNumber].InitialBalance;//RHS PLAYER.***//
+            double totalSales = player.DailyReports[dayNumber].EndingBalance = player.DailyReports[dayNumber].InitialBalance;//RHS PLAYER.***//
 
             WriteLine($"Day {dayNumber + 1} Results for {player.Name}");
             WriteLine("===============================================================================\n");
@@ -165,12 +165,12 @@ namespace lemonade_stand
                 {
                     ShopProduct(input, store.Products.Where(p => p.Name == input).First(), player);
                 }
-                else if (input != "cotinue") 
+                else if (input != "continue") 
                 {
                     WriteLine($"{input} is not a valid product.  Please try again.");
                 }
             } while (input != "continue");
-
+           
         }
 
         private static bool IsValidDoubleGreaterThanZero(string str)

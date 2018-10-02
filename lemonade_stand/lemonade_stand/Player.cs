@@ -8,7 +8,7 @@ namespace lemonade_stand
 {
     abstract public class Player
     {
-        static double initialBalance = 25 ;
+        static double initialBalance = 20 ;
 
         double balance;
         string name;
@@ -42,9 +42,9 @@ namespace lemonade_stand
 
         public string Name
         {
-            get { return name.ToUpper(); }
+            get { return name.ToLower(); }
 
-            set { name = value.ToUpper(); }
+            set { name = value.ToLower(); }
         }
 
         public Player(Store store)
@@ -83,10 +83,10 @@ namespace lemonade_stand
             return inventory[item];
         }
 
-     /*   public void DisplayBalance()
+        public void DisplayBalance()
         {
            Shopping.DisplayBalance(this);
-        } */
+        } 
 
         public void GoShopping(Store store)
         {

@@ -15,10 +15,7 @@ namespace lemonade_stand
         private List<Ingredient> cup;
         List<Ingredient> pitcher;
         double sellPrice;
-        public Recipe()
-        {
-            
-        }
+        
         
         public Recipe(List<Product> products)
         {
