@@ -30,7 +30,7 @@ namespace lemonade_stand
         }
         private void CreateConditionsList()
         {
-            conditions.Add("snow");
+            
             conditions.Add("rainy");
             conditions.Add("mostly sunny");
             conditions.Add("partly sunny");
@@ -39,6 +39,10 @@ namespace lemonade_stand
             conditions.Add("partly cloudy with  rain showers");
             conditions.Add("mostly cloudy with rain showers");
             conditions.Add("thunder storms");
+            conditions.Add("hazy");
+            conditions.Add("hot");
+            conditions.Add("overcast");
+
         }
         public string Condition
         {

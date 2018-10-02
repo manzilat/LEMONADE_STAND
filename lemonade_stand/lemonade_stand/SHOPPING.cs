@@ -59,7 +59,7 @@ namespace lemonade_stand
             WriteLine($"Total Sales: {totalSales:C2}");
             WriteLine($"Ending Balance: {player.DailyReports[dayNumber].EndingBalance:C2}");
             WriteLine($"Running Profit/Loss {player.DailyReports[dayNumber].EndingBalance - Player.InitialBalance}");
-
+            WriteLine("===============================================================================\n");
             if (player.DailyReports[dayNumber].RanOutOfInventory)
             {
                 WriteLine("\n=================================================================================");
